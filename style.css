@@ -1,50 +1,77 @@
-.heart {
-  background-color: red;
-  display: inline-block;
-  height: 50px;
-  margin: 0 10px;
-  position: relative;
-  top: 0;
-  transform: rotate(-45deg);
-  position: absolute; 
-  left: 45%; top: 45%;
-  width: 50px;
-}
+body { 
+	display:flex; 
+	align-items: center; 
+	justify-content: center; 
+	min-height:100vh; 
+	margin: 0; 
+	background-color: lightcoral; 
+} 
 
-.heart:before,
-.heart:after {
-  content: "";
-  background-color: red;
-  border-radius: 50%;
-  height: 50px;
-  position: absolute;
-  width: 50px;
-}
+.heart { 
+	background: red; 
+	position: relative; 
+	height: 100px; 
+	width:100px; 
+	/* Animation */
+	transform: rotate(-45deg) scale(1); 
+	animation: pulse 2s linear infinite; 
+} 
 
-.heart:before {
-  top: -25px;
-  left: 0;
-}
 
-.heart:after {
-  left: 25px;
-  top: 0;
-}
-.heart {
-  animation: heartbeat 1s infinite; 
-}
-@keyframes heartbeat {
-  0% {
-    transform: scale( 1 );    
-  }
-  20% {
-    transform: scale( 1.25 ) 
-      translateX(5%) 
-      translateY(5%);
-  } 
-  40% {
-    transform: scale( 1.5 ) 
-      translateX(9%) 
-      translateY(10%);
-  }
-}
+.heart::after { 
+	/* background:blue; */
+	background:inherit; 
+	border-radius: 50%; /* To make circle */
+	content:''; 
+	position:absolute; 
+	/* top: -100px;*/
+	top: -50%; /* Inherit properties of parent */
+	/* left: -100px; */
+	left:0; 
+	height: 100px; 
+	width:100px; 
+} 
+.heart::before { 
+/* background:green; */
+	background:inherit; 
+	border-radius: 50%; /* To make circle */
+	content:''; 
+	position:absolute; 
+	top:0; 
+	right:-50%; /* Inherit properties of parent */
+	height: 100px; 
+	width:100px; 
+} 
+
+@keyframes pulse{ 
+	0% { 
+		transform: rotate(-45deg) scale(1); 
+		opacity: 0; 
+	}/* 
+	10% { 
+		transform: rotate(-45deg) scale(1.3); 
+	} 
+	20% { 
+		transform: rotate(-45deg) scale(0.9); 
+	} 
+	30% { 
+		transform: rotate(-45deg) scale(1.2); 
+	} 
+	40% { 
+		transform: rotate(-45deg) scale(0.9); 
+	}*/
+	50% { 
+		transform: rotate(-45deg) scale(1.3); 
+		opacity: 1; 
+	}/* 
+	60% { 
+		transform: rotate(-45deg) scale(0.95); 
+	} 
+	70% { 
+		transform: rotate(-45deg) scale(1); 
+	} */
+	100% { 
+		transform: rotate(-45deg) scale(1); 
+		opacity: 1; 
+	} 
+} 
