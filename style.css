@@ -147,7 +147,7 @@ label
 
 /* angry animation */
 .smiley.angry .mouth,
-#angry[type=radio]:checked ~ .smiley .mouth
+#angry .smiley .mouth
 {
   width: 40%;
   height: 20%;
@@ -162,13 +162,13 @@ label
 }
 
 .smiley.angry .eyes,
-#angry[type=radio]:checked ~ .smiley .eyes
+#angry .smiley .eyes
 {
   margin-top: 35%
 }
 
 .smiley.angry .eye::after,
-#angry[type=radio]:checked ~ .smiley .eye::after
+#angry .smiley .eye::after
 {
   width: 120%;
   height: 50%;
@@ -179,7 +179,7 @@ label
 }
 
 .smiley.angry .eye:first-of-type::after,
-#angry[type=radio]:checked ~ .smiley .eye:first-of-type::after
+#angry .smiley .eye:first-of-type::after
 {
   transform: rotate(35deg);
   left: auto;
