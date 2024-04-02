@@ -127,7 +127,7 @@ label
 
 /* Normal animation */
 .smiley.normal .mouth,
-#normal[type=radio]:checked ~ .smiley .mouth
+#normal .smiley .mouth
 {
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
@@ -140,7 +140,7 @@ label
 }
 
 .smiley.normal .eyes,
-#normal[type=radio]:checked ~ .smiley .eyes
+#normal .smiley .eyes
 {
   margin-top: 30%
 }
@@ -188,13 +188,6 @@ label
 
 /* */
 
-.smiley.happy .mouth,
-#happy[type=radio]:checked ~ .smiley .mouth
-{
-  animation: move-mouth-down 6s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-}
 
 
 @keyframes move-mouth-down 
@@ -225,13 +218,7 @@ label
 }
 
 
-.smiley.happy .eyes,
-#happy[type=radio]:checked ~ .smiley .eyes
-{
-  animation: move-eyes-down 6s;
-  animation-delay: 5s;
-  animation-iteration-count: infinite;
-}
+
 
 
 @keyframes move-eyes-down 
